@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Wire Method Example" icon-name="custom:custom54">
+        <div class="slds-m-around_small">
+
+            <lightning-input value={subject} label="Search Cases by subject" onchange={handleChange}></lightning-input>
+                <template for:each={reocrds} for:item="item">
+                    <p key={item.Id}>
+                        {item.Status} <br/>
+                        {item.Subject}
+                    </p>
+
+                </template>
+                <template if:true={error}>
+                    There is an error while fetching the class.
+                </template>
+        </div></lightning-card>
+</template>
